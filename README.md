@@ -1,12 +1,19 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### **📄 E-commerce Website – FOREVER – `README.md`**
+```markdown
+# 🛍 FOREVER – E-commerce Website
 
-Currently, two official plugins are available:
+A responsive online shopping platform where men, women, and kids can browse and purchase clothing, with separate dashboards for users and admins.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- 👕 Browse and purchase clothes for men, women, and kids.
+- 🔑 Separate **login & signup** pages for users and admins with role-based access.
+- 🛒 Shopping cart and order placement system.
+- 🛠 Admin dashboard to add, edit, and remove products.
+- 📱 Mobile-friendly UI for seamless shopping experience.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+**Frontend:** HTML, Tailwind CSS, JavaScript, React  
+**Backend:** Node.js, Express.js  
+**Database:** MongoDB  
+**Others:** REST APIs, JWT Authentication
