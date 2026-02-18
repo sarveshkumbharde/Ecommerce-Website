@@ -151,7 +151,7 @@ const verifyRazorpay = async (req, res) => {
     console.log(orderInfo);
     if (orderInfo.status === "paid") {
       await orderModel.findByIdAndUpdate(orderInfo.receipt, { payment: true });
-      await userModel.findByIdAndDelete(userId, { carData: {} });
+      await userModel.findByIdAndUpdate(userId, { carData: {} });
       res.json({ success: true, message: "payment successful" });
     } else {
       res.json({ success: false, message: "payment failed" });
@@ -207,3 +207,39 @@ export {
   verifyStripe,
   verifyRazorpay,
 };
+
+
+// THE ENTIRE STRIPE FLOW IN 9 STEPS (ULTRA SIMPLE)
+// 1. User submits order
+// 2. Frontend sends order to backend
+// 3. Backend saves order as UNPAID
+// 4. Backend creates Stripe Checkout Session
+// 5. Frontend redirects to Stripe payment page
+// 6. User pays on Stripe (your app is paused)
+// 7. Stripe redirects back to your frontend /verify
+// 8. Frontend sends success/failure + orderId to backend
+// 9. Backend confirms payment → updates DB → clears cart → redirect to /orders
+
+// line_items is simply:
+
+// ✔ A list of products you are selling
+// ✔ Formatted in the way Stripe expects
+// ✔ So Stripe can display them AND charge the correct amount
+
+// Stripe cannot magically know:
+
+// what items user bought
+
+// what their prices are
+
+// how many quantities
+
+// delivery charges
+
+// currency
+
+// names
+
+// Stripe has no idea unless you tell it.
+
+// That’s why you build a line_items array.

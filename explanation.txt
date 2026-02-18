@@ -1,0 +1,33 @@
+This is an E-commerce website for buying clothes. 
+
+There are 2 roles in this system, user and admin
+
+User can buy clothes for 3 categories men, women and kids
+
+Admin's work is to add new product and its details, delete unnecessary products and track order status
+
+For backend I'm using Node.js and Express.js, for frontend I'm using React.js and for database I'm using MongoDB.
+
+I created 3 data models user, order and product
+
+For Payment gateway I'm using Razorpay and stripe.
+
+User fills the cart with the clothes and their sizes, then he clicks proceed to checkout, the payment page opens and there are 3 options
+for payments razorpay, stripe and cash on delivery. User selects payment option and then pays the bill. After that user's order is created
+
+
+RAZORPAY PAYMENTS FLOW
+
+The backend initiates the payment (creates a checkout session in Stripe or an order in Razorpay). The user completes the 
+payment. The payment gateway then sends a signed webhook event to the backend, and after verifying the signature, the backend 
+updates the order status.
+
+webhook is used because:
+
+frontend is fragile,
+if network gone after making payment, the frontend can't send request to '/verify-payment',
+so backend never hear payment,
+
+Browser can be crashed
+
+Webhook directly sends request to backend instead of sending it to frontend.

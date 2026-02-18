@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import { assets } from "../assets/admin_assets/assets";
 import axios from "axios";
 import { backendUrl } from "../App";
@@ -160,7 +160,7 @@ const Add = ({ token }) => {
             </select>
           </div>
           <div>
-            <p>Sub Category</p>
+            <p className="mb-2">Sub Category</p>
             <select
               onChange={(e) => setSubCategory(e.target.value)}
               className="w-full px-3 py-2"

@@ -2,7 +2,7 @@
 @import "tailwindcss";
 .active{
     background-color: #ffebf5;
-    border-color: #c586a5;
+    border-color: #c778c7;
 }
 *{
     font-family: Outfit;
