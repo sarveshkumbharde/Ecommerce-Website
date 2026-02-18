@@ -5,6 +5,7 @@ import { assets } from "../assets/frontend_assets/assets";
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Verify from "./Verify";
 
 const PlacedOrder = () => {
   const [method, setMethod] = useState("cod");
@@ -45,10 +46,10 @@ const PlacedOrder = () => {
       description: order.description,
       order_id: order.id,
       receipt: order.receipt,
-      handler: async()=>{
+      handler: async(response)=>{
         console.log(response)
         try {
-          const {data} = await axios.post(`${backendUrl}/api/order/verify-razorpay`, response, {header:{token}})
+          const {data} = await axios.post(`${backendUrl}/api/order/verify-razorpay`, response, {headers:{token}})
           if(data.status === 'success'){
             navigate('/orders')
             setCartItems({})
