@@ -26,18 +26,19 @@ app.use(cors({
   }
 }
 }))
-app.use(express.json())
+app.use(express.json()) 
 
-//api endpoints
+//api endpoints 
 app.get('/',(req,res)=>{
-    res.send("Api working")
+    res.send("Api working") 
 })
-
+ 
 app.use('/api/user', userRouter)
 app.use('/api/product', productRouter)
-app.use('/api/cart', cartRouter)
+app.use('/api/cart', cartRouter) 
 app.use('/api/order', orderRouter)
 
-app.listen(port, ()=>{
+app.listen(port, ()=>{ 
     console.log(`Server is running on port ${port}`)
 })
+    
