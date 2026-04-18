@@ -16,7 +16,7 @@ connectCloudinary()
  
 //middlewares
 
-const allowedOrigins = process.env.FRONTEND_URLS.split(", ");
+const allowedOrigins = process.env.FRONTEND_URLS.split(", "); 
 app.use(cors({
     origin: function(origin, callback) {
   if (!origin || allowedOrigins.includes(origin)) {
