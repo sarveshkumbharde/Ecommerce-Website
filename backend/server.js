@@ -27,7 +27,7 @@ app.use(cors({
 }
 }))
 app.use(express.json())
-
+              
 //api endpoints
 app.get('/',(req,res)=>{
     res.send("Api working")
